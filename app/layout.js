@@ -1,4 +1,6 @@
+import Header from "@/components/Header";
 import "./globals.css";
+import Provider from "@/components/Provider";
 
 export const metadata = {
   title: "Home/Twitter",
@@ -8,7 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="px-40 grid grid-cols-[250px,1fr] relative">
+        <Provider>
+          <Header />
+          {children}
+        </Provider>
+      </body>
     </html>
   );
 }
