@@ -10,11 +10,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="px-40 grid grid-cols-[250px,1fr] relative">
-        <Provider>
-          <Header />
-          {children}
-        </Provider>
+      <body className="px-40 relative">
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
