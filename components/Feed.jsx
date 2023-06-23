@@ -1,6 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import { useState } from "react";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { BiLocationPlus } from "react-icons/bi";
 import { BsCalendar2Date, BsEmojiSmile, BsListStars } from "react-icons/bs";
@@ -8,6 +9,8 @@ import { HiOutlinePhotograph } from "react-icons/hi";
 
 const Feed = () => {
   const { data: session } = useSession();
+  const [tweet, setTweet] = useState();
+
   return (
     <div className="p-3 border-t border-b border-gray-200">
       <div className="flex items-center gap-3">
@@ -17,6 +20,8 @@ const Feed = () => {
           className="w-[40px] rounded-full"
         />
         <input
+          value={tweet}
+          onChange={(e) => setTweet(e.target.value)}
           type="text"
           placeholder="What is happening?!"
           className="text-sm placeholder:text-xl outline-none"
@@ -31,7 +36,10 @@ const Feed = () => {
           <BsCalendar2Date className="feed__icon" />
           <BiLocationPlus className="feed__icon" />
         </div>
-        <button className="px-5 py-2 bg-blue-500 text-white rounded-full">
+        <button
+          disabled={!tweet.trim()}
+          className="px-5 py-2 bg-blue-500 text-white rounded-full disabled:brightness-75"
+        >
           Tweet
         </button>
       </div>
