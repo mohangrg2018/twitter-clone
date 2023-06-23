@@ -22,7 +22,7 @@ const Header = () => {
   const { data: session } = useSession();
   if (session) {
     return (
-      <section className="h-screen flex flex-col gap-8 pt-3 border-r border-gray-200">
+      <section className="h-screen sticky top-0 flex flex-col gap-8 pt-3 border-r border-gray-200">
         <Link href="/">
           <AiOutlineTwitter className="text-4xl" />
         </Link>

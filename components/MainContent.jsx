@@ -1,6 +1,6 @@
 import TopHead from "./TopHead";
 import Feed from "./Feed";
-import Post from "./Post";
+import Posts from "./Posts";
 
 const MainContent = () => {
   return (
@@ -12,7 +12,7 @@ const MainContent = () => {
       <Feed />
 
       {/* POST SECTION */}
-      <Post />
+      <Posts />
     </div>
   );
 };
