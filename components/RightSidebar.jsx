@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import News from "./News";
+import Followers from "./Followers";
 
 const RightSidebar = () => {
   return (
@@ -14,6 +15,7 @@ const RightSidebar = () => {
         />
       </div>
       <News />
+      <Followers />
     </div>
   );
 };

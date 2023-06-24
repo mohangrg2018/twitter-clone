@@ -14,13 +14,12 @@ const News = () => {
       );
       const data = await res.json();
       setNews(data.articles);
-      console.log(data);
     };
     fetchData();
   }, []);
   return (
-    <div className="my-10 bg-gray-200 p-4 rounded-lg">
-      <h1 className="font-bold">Trends for you</h1>
+    <div className="my-10 bg-gray-100 p-4 rounded-lg">
+      <h1 className="font-bold mb-5">Trends for you</h1>
       {news.slice(0, articleNum).map((newItem, index) => (
         <div key={index}>
           <NewsArticle title={newItem.title} img={newItem.urlToImage} />
