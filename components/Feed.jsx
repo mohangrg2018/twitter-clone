@@ -37,7 +37,7 @@ const Feed = () => {
           <BiLocationPlus className="feed__icon" />
         </div>
         <button
-          disabled={!tweet.trim()}
+          disabled={!tweet || !tweet.trim()}
           className="px-5 py-2 bg-blue-500 text-white rounded-full disabled:brightness-75"
         >
           Tweet
